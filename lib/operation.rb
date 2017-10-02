@@ -8,4 +8,13 @@ class Operation
     @credit = credit
     @debit = debit
   end
+
+  def add(money)
+    @credit = money
+  end
+
+  def withdraw(money)
+    @debit = money
+  end
+
 end

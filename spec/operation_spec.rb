@@ -16,4 +16,14 @@ RSpec.describe Operation do
   it 'has a default debit of 0' do
     expect(@operation.debit).to eq(0)
   end
+
+  it 'can update the credit' do
+    @operation.add(50)
+    expect(@operation.credit).to eq(50)
+  end
+
+  it 'can update the debit' do
+    @operation.withdraw(70)
+    expect(@operation.debit).to eq(70)
+  end
 end
