@@ -30,6 +30,7 @@ RSpec.describe Account do
 
   it 'can show all ops' do
     @account.top_up(30)
-    expect(@account.show_all_ops).to eq('||')
+    @account.withdraw(20)
+    expect(@account.show_all_ops.pop).to include("10")
   end
 end
