@@ -3,6 +3,7 @@ require 'account'
 RSpec.describe Account do
   before(:each) do
     @account = Account.new
+    @operation = Operation.new
   end
 
   it 'has an initial balance of 0' do
@@ -17,15 +18,18 @@ RSpec.describe Account do
     expect(@account.operations).to eq([])
   end
 
-  it 'can update the balance' do
-    @operation = Operation.new
+  it 'can increase the balance' do
     @account.top_up(20)
     expect(@account.balance).to eq(20)
   end
 
+  it 'can reduce the balance' do
+    @account.withdraw(10)
+    expect(@account.balance).to eq(-10)
+  end
 
-  # it 'can update the balance' do
-  #   @account.operation.add(50)
-  #   expect(@account.balance).to eq(50)
-  # end
+  it 'can show all ops' do
+    @account.top_up(30)
+    expect(@account.show_all_ops).to eq('||')
+  end
 end

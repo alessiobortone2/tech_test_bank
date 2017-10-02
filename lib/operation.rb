@@ -4,7 +4,7 @@ require 'date'
 class Operation
   attr_reader :date, :credit, :debit
   def initialize(date = Date.today, credit = 0, debit = 0)
-    @date = date
+    @date = date.strftime('%d/%m/%Y')
     @credit = credit
     @debit = debit
   end
@@ -13,7 +13,7 @@ class Operation
     @credit = money
   end
 
-  def withdraw(money)
+  def subtract(money)
     @debit = money
   end
 

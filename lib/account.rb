@@ -2,11 +2,11 @@ require_relative './operation.rb'
 
 # implements account
 class Account
-  attr_reader :balance, :user, :operations
-  def initialize(balance = 0, user = 'anon', operations = [])
-    @balance = balance
+  attr_reader :user, :operations, :balance
+  def initialize(user = 'anon', balance = 0, operations = [])
     @user = user
     @operations = operations
+    @balance = balance
   end
 
   def top_up(money)
@@ -15,7 +15,18 @@ class Account
     @balance += @operation.add(money)
   end
 
-  def withdraw;  end
+  def withdraw(money)
+    @operation = Operation.new
+    @operations << @operation
+    @balance -= @operation.subtract(money)
+  end
 
-  def show_balance; end
+  def show_all_ops
+    puts 'date || credit || debit || balance'
+    @operations.reverse!
+    @operations.each do |operation|
+      print "#{operation.date} || #{operation.credit} || #{operation.debit} ||"
+      puts " #{@balance}"
+    end
+  end
 end

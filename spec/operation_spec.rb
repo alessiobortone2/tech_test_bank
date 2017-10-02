@@ -6,7 +6,7 @@ RSpec.describe Operation do
   end
 
   it 'has a date' do
-    expect(@operation.date).to eq(Date.today)
+    expect(@operation.date).to eq(Date.today.strftime('%d/%m/%Y'))
   end
 
   it 'has a default credit of 0' do
@@ -23,7 +23,7 @@ RSpec.describe Operation do
   end
 
   it 'can update the debit' do
-    @operation.withdraw(70)
+    @operation.subtract(70)
     expect(@operation.debit).to eq(70)
   end
 end
