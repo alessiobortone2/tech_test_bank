@@ -13,7 +13,19 @@ RSpec.describe Account do
     expect(@account.user).to eq('anon')
   end
 
-  it 'has a list of operations' do
-    expect(@account.operation).to eq([])
+  it 'has initially no operations' do
+    expect(@account.operations).to eq([])
   end
+
+  it 'can update the balance operation' do
+    @operation = Operation.new
+    @account.top_up(20)
+    expect(@account.balance).to eq(20)
+  end
+
+
+  # it 'can update the balance' do
+  #   @account.operation.add(50)
+  #   expect(@account.balance).to eq(50)
+  # end
 end
