@@ -17,7 +17,7 @@ RSpec.describe Account do
     expect(@account.operations).to eq([])
   end
 
-  it 'can update the balance operation' do
+  it 'can update the balance' do
     @operation = Operation.new
     @account.top_up(20)
     expect(@account.balance).to eq(20)
