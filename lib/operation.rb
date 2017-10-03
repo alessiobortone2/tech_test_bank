@@ -16,5 +16,4 @@ class Operation
   def subtract(money)
     @debit = money
   end
-
 end

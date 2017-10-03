@@ -29,8 +29,8 @@ RSpec.describe Account do
   end
 
   it 'can show all ops' do
-    @account.top_up(30)
-    @account.withdraw(20)
-    expect(@account.show_all_ops.pop).to include("10")
+    @account.top_up(40)
+    @account.withdraw(15)
+    expect(@account.show_all_ops.pop).to include('25')
   end
 end

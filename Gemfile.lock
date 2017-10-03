@@ -58,7 +58,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  flog
+  flog (~> 4.3, >= 4.3.2)
   rake
   rspec
   rubocop

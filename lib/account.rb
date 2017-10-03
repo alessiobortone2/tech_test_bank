@@ -23,13 +23,16 @@ class Account
 
   def show_all_ops
     puts 'date || credit || debit || balance'
-    temp_bal = 0
-    arr = []
-    @operations.each do |operation|
-      delta = operation.credit - operation.debit
-      temp_bal += delta
-      arr << "#{operation.date} || #{operation.credit} || #{operation.debit} || #{temp_bal}"
+    loop_through_ops
+  end
+
+  def loop_through_ops
+    temp_array = []
+    @balance = 0
+    @operations.each do |op|
+      @balance += (op.credit - op.debit)
+      temp_array << "#{op.date} || #{op.credit} || #{op.debit} || #{@balance}"
     end
-    arr.reverse_each { |item| puts item }
+    temp_array.reverse_each { |item| puts item }
   end
 end
