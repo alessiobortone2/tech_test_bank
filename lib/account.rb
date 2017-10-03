@@ -1,24 +1,24 @@
-require_relative './operation.rb'
+require_relative './transaction.rb'
 
 # implements account
 class Account
-  attr_reader :user, :balance, :operations
-  def initialize(user = 'anon', balance = 0, operations = [])
+  attr_reader :user, :balance, :transactions
+  def initialize(user = 'anon', balance = 0, transactions = [])
     @user = user
     @balance = balance
-    @operations = operations
+    @transactions = transactions
   end
 
   def top_up(money)
-    @operation = Operation.new
-    @balance += @operation.add(money)
-    @operations << @operation
+    @transaction = Transaction.new
+    @balance += @transaction.add(money)
+    @transactions << @transaction
   end
 
   def withdraw(money)
-    @operation = Operation.new
-    @balance -= @operation.subtract(money)
-    @operations << @operation
+    @transaction = Transaction.new
+    @balance -= @transaction.subtract(money)
+    @transactions << @transaction
   end
 
   def show_all_ops
@@ -29,7 +29,7 @@ class Account
   def loop_through_ops
     temp_array = []
     @balance = 0
-    @operations.each do |op|
+    @transactions.each do |op|
       @balance += (op.credit - op.debit)
       temp_array << "#{op.date} || #{op.credit} || #{op.debit} || #{@balance}"
     end

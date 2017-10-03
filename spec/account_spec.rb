@@ -3,7 +3,7 @@ require 'account'
 RSpec.describe Account do
   before(:each) do
     @account = Account.new
-    @operation = Operation.new
+    @transaction = Transaction.new
   end
 
   it 'has an initial balance of 0' do
@@ -14,8 +14,8 @@ RSpec.describe Account do
     expect(@account.user).to eq('anon')
   end
 
-  it 'has initially no operations' do
-    expect(@account.operations).to eq([])
+  it 'has initially no transactions' do
+    expect(@account.transactions).to eq([])
   end
 
   it 'can increase the balance' do

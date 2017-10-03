@@ -79,7 +79,7 @@
         null,
         null
       ],
-      "/Users/alessiobortone/Documents/GitHub/tech_tests/1_Bank/lib/operation.rb": [
+      "/Users/alessiobortone/Documents/GitHub/tech_tests/1_Bank/lib/transaction.rb": [
         1,
         null,
         null,
@@ -97,10 +97,16 @@
         null,
         1,
         3,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
-      "/Users/alessiobortone/Documents/GitHub/tech_tests/1_Bank/spec/operation_spec.rb": [
+      "/Users/alessiobortone/Documents/GitHub/tech_tests/1_Bank/spec/transaction_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -132,6 +138,6 @@
         null
       ]
     },
-    "timestamp": 1507024674
+    "timestamp": 1507045594
   }
 }
