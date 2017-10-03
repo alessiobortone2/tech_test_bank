@@ -1,23 +1,14 @@
+# frozen_string_literal: true
+
 require_relative './transaction.rb'
+require_relative './account.rb'
 
 # implements account
-class Account
+class TransactionLogPrint
   attr_reader :balance, :transactions
-  def initialize(balance = 0, transactions = [])
+  def initialize(balance, transactions)
     @balance = balance
     @transactions = transactions
-  end
-
-  def top_up(money)
-    @transaction = Transaction.new
-    @transaction.add(money)
-    @transactions << @transaction
-  end
-
-  def withdraw(money)
-    @transaction = Transaction.new
-    @transaction.subtract(money)
-    @transactions << @transaction
   end
 
   def show_all_ops

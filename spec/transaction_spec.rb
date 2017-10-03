@@ -28,4 +28,10 @@ RSpec.describe Transaction do
     @transaction.subtract(70)
     expect(@transaction.debit).to eq(70)
   end
+
+  it 'can calculate the delta' do
+    @transaction.add(70)
+    @transaction.subtract(50)
+    expect(@transaction.delta).to eq(20)
+  end
 end
