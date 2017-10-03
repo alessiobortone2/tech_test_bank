@@ -4,7 +4,7 @@ In the first tech test of the week, I have been tasked with building a mini-bank
 
 ## Getting started
 
-1. Please clone: 'git@github.com:alessiobortone2/tech_test_bank.git'
+1. Please clone: `git@github.com:alessiobortone2/tech_test_bank.git`
 
 2. Run `bundle install` to install all gems locally (rspec, rubocop, simplecov, flog, mutant-rspec)
 
@@ -15,6 +15,8 @@ In the first tech test of the week, I have been tasked with building a mini-bank
 
 ## Running tests
 
-'rspec -fd' for unit testing
-'find lib -name \*.rb | xargs flog -g' for complexity test
-'mutant --include lib' for mutation testing
+`rspec -fd` for unit testing
+
+`find lib -name \*.rb | xargs flog -g` for complexity test
+
+`mutant --include lib` for mutation testing
