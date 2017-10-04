@@ -2,23 +2,23 @@
 
 require_relative './transaction.rb'
 
-# implements transaction log
-class TransactionLog
-  attr_reader :balance, :transactions
-  def initialize(balance = 0, transactions = [])
+# logs transaction and updates the account balance
+class TransactionLedger
+  attr_reader :balance, :log
+  def initialize(balance = 0, log = [])
     @balance = balance
-    @transactions = transactions
+    @log = log
   end
 
   def top_up(money)
     @transaction = Transaction.new
     @balance += @transaction.add(money)
-    @transactions << @transaction
+    @log << @transaction
   end
 
   def withdraw(money)
     @transaction = Transaction.new
     @balance -= @transaction.subtract(money)
-    @transactions << @transaction
+    @log << @transaction
   end
 end

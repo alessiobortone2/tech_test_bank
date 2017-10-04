@@ -1,26 +1,29 @@
 # frozen_string_literal: true
 
 require_relative './transaction.rb'
-require_relative './account.rb'
+require_relative './transaction_ledger.rb'
 
 # implements account
-class TransactionLogPrint
-  attr_reader :balance, :transactions
-  def initialize(balance, transactions)
-    @balance = balance
+class TransactionLedgerDisplay
+  attr_reader :transactions
+  def initialize(transactions)
     @transactions = transactions
   end
 
-  def show_all_ops
-    puts 'date || credit || debit || balance'
-    loop_through_ops
+  def print_all
+    print_header
+    print_statement
   end
 
-  def loop_through_ops
+  def print_header
+    puts 'date || credit || debit || balance'
+  end
+
+  def print_statement
     temp_array = []
     @balance = 0
     @transactions.each do |op|
-      @balance += (op.credit - op.debit)
+      @balance += (op.credit -  op.debit)
       temp_array << "#{op.date} || #{op.credit} || #{op.debit} || #{@balance}"
     end
     temp_array.reverse_each { |item| puts item }
