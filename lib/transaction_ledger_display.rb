@@ -11,20 +11,21 @@ class TransactionLedgerDisplay
   end
 
   def print_all
-    print_header
-    print_statement
+    puts print_header + print_statement.join("\n")
   end
 
   def print_header
-    'date || credit || debit || balance'
+    "date || credit || debit || balance\n"
   end
 
   def print_statement
     @balance = 0
     @log.map! do |tr|
       @balance += tr.delta
-      "#{tr.date} || #{sprintf('%.2f', tr.credit) if tr.credit != 0} || #{sprintf('%.2f', tr.debit) if tr.debit != 0} || #{sprintf('%.2f', @balance)}"
+      "#{tr.date} || #{format('%.2f', tr.credit) if tr.credit != 0} ||"\
+      " #{format('%.2f', tr.debit) if tr.debit != 0} ||"\
+      " #{format('%.2f', @balance)}"
     end
-    @log.reverse!.each { |item| puts item }
+    @log.reverse!
   end
 end
