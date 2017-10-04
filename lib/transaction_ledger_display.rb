@@ -5,9 +5,9 @@ require_relative './transaction_ledger.rb'
 
 # implements account
 class TransactionLedgerDisplay
-  attr_reader :transactions
-  def initialize(transactions)
-    @transactions = transactions
+  attr_reader :log
+  def initialize(log = [])
+    @log = log
   end
 
   def print_all
@@ -16,15 +16,15 @@ class TransactionLedgerDisplay
   end
 
   def print_header
-    puts 'date || credit || debit || balance'
+    'date || credit || debit || balance'
   end
 
   def print_statement
     temp_array = []
     @balance = 0
-    @transactions.each do |op|
-      @balance += (op.credit -  op.debit)
-      temp_array << "#{op.date} || #{op.credit} || #{op.debit} || #{@balance}"
+    @log.each do |tr|
+      @balance += (tr.credit -  tr.debit)
+      temp_array << "#{tr.date} || #{tr.credit} || #{tr.debit} || #{@balance}"
     end
     temp_array.reverse_each { |item| puts item }
   end
