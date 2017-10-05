@@ -3,7 +3,7 @@
 require_relative './transaction.rb'
 require_relative './transaction_ledger.rb'
 
-# implements account
+# displays ledger of all transactions
 class TransactionLedgerDisplay
   attr_reader :log
   def initialize(log = [])
@@ -11,7 +11,7 @@ class TransactionLedgerDisplay
   end
 
   def print_all
-    puts print_header + print_statement.join("\n")
+    puts print_header + format_transactions.join("\n")
   end
 
   private
@@ -20,7 +20,7 @@ class TransactionLedgerDisplay
     "date || credit || debit || balance\n"
   end
 
-  def print_statement
+  def format_transactions
     balance = 0
     @log.map! do |tr|
       balance += tr.delta
