@@ -4,21 +4,21 @@ require 'transaction_ledger'
 
 RSpec.describe TransactionLedger do
   before(:each) do
-    @transactionledger = TransactionLedger.new
+    @transaction_ledger = TransactionLedger.new
     @transaction = Transaction.new
   end
 
   it 'has an initial balance of 0' do
-    expect(@transactionledger.balance).to eq(0)
+    expect(@transaction_ledger.balance).to eq(0)
   end
 
   it 'has initially no transactions' do
-    expect(@transactionledger.log).to eq([])
+    expect(@transaction_ledger.log).to eq([])
   end
 
   it 'can increase the balance' do
-    @transactionledger.top_up(20)
-    expect(@transactionledger.balance).to eq(20)
+    @transaction_ledger.top_up(20)
+    expect(@transaction_ledger.balance).to eq(20)
   end
 
   it 'can reduce the balance' do

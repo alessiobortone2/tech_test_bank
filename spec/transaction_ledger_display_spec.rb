@@ -5,16 +5,16 @@ require 'transaction_ledger_display'
 RSpec.describe TransactionLedgerDisplay do
   before(:each) do
     @transaction = Transaction.new
-    @transactionledger = TransactionLedger.new
-    @transactionledgerdisplay = \
-      TransactionLedgerDisplay.new(@transactionledger.log)
+    @transaction_ledger = TransactionLedger.new
+    @transaction_ledger_display = \
+      TransactionLedgerDisplay.new(@transaction_ledger.log)
   end
 
   it 'can show all ops' do
-    @transactionledger.top_up(1000)
-    @transactionledger.top_up(2000)
-    @transactionledger.withdraw(500)
-    expect { @transactionledgerdisplay.print_all }.to \
+    @transaction_ledger.top_up(1000)
+    @transaction_ledger.top_up(2000)
+    @transaction_ledger.withdraw(500)
+    expect { @transaction_ledger_display.print_all }.to \
       output("date || credit || debit || balance\n"\
       "05/10/2017 ||  || 500.00 || 2500.00\n"\
       "05/10/2017 || 2000.00 ||  || 3000.00\n"\
