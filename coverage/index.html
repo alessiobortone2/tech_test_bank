@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-05T13:04:47+01:00">2017-10-05T13:04:47+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-05T13:06:46+01:00">2017-10-05T13:06:46+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -885,7 +885,7 @@
         <li class="covered" data-hits="4" data-linenumber="7">
           <span class="hits">4</span>
           
-          <code class="ruby">    @transactionledger = TransactionLedger.new</code>
+          <code class="ruby">    @transaction_ledger = TransactionLedger.new</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="8">
@@ -915,7 +915,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@transactionledger.balance).to eq(0)</code>
+          <code class="ruby">    expect(@transaction_ledger.balance).to eq(0)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -939,7 +939,7 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@transactionledger.log).to eq([])</code>
+          <code class="ruby">    expect(@transaction_ledger.log).to eq([])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -963,13 +963,13 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">    @transactionledger.top_up(20)</code>
+          <code class="ruby">    @transaction_ledger.top_up(20)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@transactionledger.balance).to eq(20)</code>
+          <code class="ruby">    expect(@transaction_ledger.balance).to eq(20)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -993,13 +993,13 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    @transactionledger.withdraw(10)</code>
+          <code class="ruby">    @transaction_ledger.withdraw(10)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@transactionledger.balance).to eq(-10)</code>
+          <code class="ruby">    expect(@transaction_ledger.balance).to eq(-10)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">

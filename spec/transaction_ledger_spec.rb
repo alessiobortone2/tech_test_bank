@@ -22,7 +22,7 @@ RSpec.describe TransactionLedger do
   end
 
   it 'can reduce the balance' do
-    @transactionledger.withdraw(10)
-    expect(@transactionledger.balance).to eq(-10)
+    @transaction_ledger.withdraw(10)
+    expect(@transaction_ledger.balance).to eq(-10)
   end
 end
