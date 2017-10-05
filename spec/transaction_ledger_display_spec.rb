@@ -10,11 +10,6 @@ RSpec.describe TransactionLedgerDisplay do
       TransactionLedgerDisplay.new(@transactionledger.log)
   end
 
-  it 'can print the header' do
-    expect(@transactionledgerdisplay.print_header).to \
-      eq("date || credit || debit || balance\n")
-  end
-
   it 'can show all ops' do
     @transactionledger.top_up(1000)
     @transactionledger.top_up(2000)
